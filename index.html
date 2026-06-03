@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>HydroSmart Systems</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+background:#f4f7fb;
+color:#333;
+}
+
+img{
+max-width:100%;
+height:auto;
+display:block;
+}
+
+/* NAVBAR */
+
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 8%;
+background:white;
+box-shadow:0 3px 12px rgba(0,0,0,0.08);
+}
+
+.logo{
+display:flex;
+align-items:center;
+gap:12px;
+font-size:24px;
+font-weight:bold;
+color:#2f7dd3;
+}
+
+.logo img{
+height:70px;
+}
+
+nav ul{
+display:flex;
+gap:45px;
+list-style:none;
+}
+
+nav a{
+text-decoration:none;
+font-size:18px;
+color:#333;
+font-weight:500;
+transition:0.3s;
+}
+
+nav a:hover{
+color:#2f7dd3;
+}
+
+/* SLIDER */
+
+.slider{
+width:100%;
+height:70vh;
+position:relative;
+overflow:hidden;
+background:#eaf1f8;
+}
+
+.slide{
+position:absolute;
+width:100%;
+height:100%;
+display:flex;
+justify-content:center;
+align-items:center;
+opacity:0;
+animation:slider 24s infinite;
+}
+
+.slide img{
+width:60%;
+max-height:85%;
+object-fit:contain;
+}
+
+.slide:nth-child(1){animation-delay:0s;}
+.slide:nth-child(2){animation-delay:6s;}
+.slide:nth-child(3){animation-delay:12s;}
+.slide:nth-child(4){animation-delay:18s;}
+
+@keyframes slider{
+0%{opacity:0;}
+5%{opacity:1;}
+25%{opacity:1;}
+30%{opacity:0;}
+100%{opacity:0;}
+}
+
+/* PRODUCTOS */
+
+.products{
+padding:90px 10%;
+text-align:center;
+}
+
+.products h2{
+font-size:42px;
+margin-bottom:50px;
+color:#2f7dd3;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:35px;
+}
+
+.card{
+background:white;
+padding:35px;
+border-radius:14px;
+box-shadow:0 10px 25px rgba(0,0,0,0.08);
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+box-shadow:0 15px 35px rgba(0,0,0,0.15);
+}
+
+/* PROMOCIONES */
+
+.promos{
+padding:110px 10%;
+text-align:center;
+background:linear-gradient(135deg,#eaf4ff,#d7e9ff);
+}
+
+.promos h2{
+font-size:45px;
+margin-bottom:50px;
+color:#2f7dd3;
+animation:brillo 2s infinite alternate;
+}
+
+@keyframes brillo{
+from{opacity:0.7;}
+to{opacity:1;}
+}
+
+.promos-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:35px;
+margin-bottom:40px;
+}
+
+.promos .card{
+background:white;
+padding:30px;
+border-radius:14px;
+box-shadow:0 10px 25px rgba(0,0,0,0.1);
+transition:0.4s;
+}
+
+.promos .card:hover{
+transform:scale(1.05);
+box-shadow:0 20px 40px rgba(0,0,0,0.2);
+}
+
+/* GIF */
+
+.gif-box{
+margin-top:30px;
+display:flex;
+justify-content:center;
+}
+
+.gif-box img{
+width:260px;
+border-radius:12px;
+box-shadow:0 10px 25px rgba(0,0,0,0.2);
+animation:flotar 3s ease-in-out infinite;
+}
+
+@keyframes flotar{
+0%{transform:translateY(0);}
+50%{transform:translateY(-10px);}
+100%{transform:translateY(0);}
+}
+
+/* BOTONES */
+
+.cta{
+display:inline-block;
+margin-top:30px;
+padding:14px 35px;
+background:#2f7dd3;
+color:white;
+border-radius:25px;
+text-decoration:none;
+font-size:18px;
+transition:0.3s;
+}
+
+.cta:hover{
+background:#1c5fb3;
+transform:scale(1.05);
+}
+
+/* ABOUT */
+
+.about{
+padding:120px 10%;
+background:#eaf4ff;
+text-align:center;
+}
+
+.about h2{
+font-size:42px;
+margin-bottom:25px;
+}
+
+.about p{
+max-width:900px;
+margin:auto;
+font-size:20px;
+line-height:1.8;
+}
+
+/* CONTACT */
+
+.contact{
+padding:120px 10%;
+text-align:center;
+}
+
+.contact h2{
+font-size:42px;
+margin-bottom:25px;
+}
+
+.contact p{
+font-size:20px;
+}
+
+.btn{
+display:inline-block;
+margin-top:25px;
+padding:16px 40px;
+background:#2f7dd3;
+color:white;
+border-radius:30px;
+text-decoration:none;
+font-size:18px;
+transition:0.3s;
+}
+
+.btn:hover{
+background:#1c5fb3;
+transform:scale(1.05);
+}
+
+/* FOOTER */
+
+footer{
+background:#0c3d75;
+color:white;
+text-align:center;
+padding:25px;
+margin-top:40px;
+}
+
+/* ========================= */
+/* RESPONSIVE */
+/* ========================= */
+
+@media (max-width: 992px){
+
+nav{
+flex-direction:column;
+gap:20px;
+padding:20px;
+}
+
+nav ul{
+flex-wrap:wrap;
+justify-content:center;
+gap:20px;
+}
+
+.logo{
+font-size:20px;
+text-align:center;
+}
+
+.logo img{
+height:55px;
+}
+
+.slider{
+height:50vh;
+}
+
+.slide img{
+width:80%;
+}
+
+.products h2,
+.promos h2,
+.about h2,
+.contact h2{
+font-size:34px;
+}
+
+.about p,
+.contact p{
+font-size:18px;
+}
+
+}
+
+/* TABLETS Y CELULARES */
+
+@media (max-width: 768px){
+
+nav{
+padding:15px;
+}
+
+nav ul{
+flex-direction:column;
+align-items:center;
+gap:15px;
+}
+
+nav a{
+font-size:16px;
+}
+
+.logo{
+flex-direction:column;
+font-size:18px;
+}
+
+.logo img{
+height:50px;
+}
+
+.slider{
+height:40vh;
+}
+
+.slide img{
+width:90%;
+max-height:75%;
+}
+
+.products,
+.promos,
+.about,
+.contact{
+padding:70px 6%;
+}
+
+.products h2,
+.promos h2,
+.about h2,
+.contact h2{
+font-size:28px;
+}
+
+.about p,
+.contact p{
+font-size:16px;
+line-height:1.6;
+}
+
+.card{
+padding:25px;
+}
+
+.gif-box img{
+width:180px;
+}
+
+.cta,
+.btn{
+padding:12px 25px;
+font-size:16px;
+}
+
+footer{
+font-size:14px;
+padding:18px;
+}
+
+}
+
+/* CELULARES PEQUEÑOS */
+
+@media (max-width: 480px){
+
+.slider{
+height:35vh;
+}
+
+.products h2,
+.promos h2,
+.about h2,
+.contact h2{
+font-size:24px;
+}
+
+.about p,
+.contact p{
+font-size:15px;
+}
+
+.card h3{
+font-size:18px;
+}
+
+.card p{
+font-size:14px;
+}
+
+.gif-box img{
+width:150px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<nav>
+
+<div class="logo">
+<img src="logoempresa.PNG" alt="Logo">
+HydroSmart Systems
+</div>
+
+<ul>
+<li><a href="practica1.html">Inicio</a></li>
+<li><a href="productos.html">Productos</a></li>
+<li><a href="ubicacion.html">Ubicación</a></li>
+<li><a href="login.html">Login</a></li>
+<li><a href="encuesta.html">Encuesta</a></li>
+</ul>
+
+</nav>
+
+<!-- SLIDER -->
+
+<section class="slider">
+
+<div class="slide">
+<img src="Producto1.jpeg" alt="Producto 1">
+</div>
+
+<div class="slide">
+<img src="Producto2.png" alt="Producto 2">
+</div>
+
+<div class="slide">
+<img src="Producto3.png" alt="Producto 3">
+</div>
+
+<div class="slide">
+<img src="Producto4.png" alt="Producto 4">
+</div>
+
+</section>
+
+<!-- PRODUCTOS -->
+
+<section class="products">
+
+<h2>Nuestros Productos</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>Materiales Reutilizables</h3>
+<p>Reducimos el impacto ambiental.</p>
+</div>
+
+<div class="card">
+<h3>Diseño Sustentable</h3>
+<p>Mayor durabilidad y reutilización.</p>
+</div>
+
+<div class="card">
+<h3>Innovación Ecológica</h3>
+<p>Tecnología eficiente y responsable.</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- PROMOCIONES -->
+
+<section class="promos">
+
+<h2>🔥 Promociones Especiales 🔥</h2>
+
+<div class="promos-grid">
+
+<div class="card">
+<h3>20% de descuento</h3>
+<p>En tu primera compra.</p>
+</div>
+
+<div class="card">
+<h3>Instalación gratuita</h3>
+<p>Sin costo en todos los productos.</p>
+</div>
+
+<div class="card">
+<h3>Garantía extendida</h3>
+<p>Hasta 2 años gratis.</p>
+</div>
+
+</div>
+
+<div class="gif-box">
+<img src="promo.gif" alt="Promoción">
+</div>
+
+<a href="#" class="cta">Aprovechar ofertas</a>
+
+</section>
+
+<!-- ABOUT -->
+
+<section class="about">
+
+<h2>Sobre HydroSmart</h2>
+
+<p>
+HydroSmart Systems es una empresa enfocada en el desarrollo de electrodomésticos innovadores,
+eficientes y sustentables, que buscan mejorar la calidad de vida de los usuarios mientras
+reducen el impacto ambiental.
+</p>
+
+</section>
+
+<!-- CONTACT -->
+
+<section class="contact">
+
+<h2>Contacto</h2>
+
+<p>Conoce más sobre nuestros productos y proyectos.</p>
+
+<a class="btn" href="#">Enviar mensaje</a>
+
+</section>
+
+<footer>
+© 2026 HydroSmart Systems
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SmartHeater - Producto Estelar</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+background:#f4f7fb;
+color:#333;
+}
+
+img{
+max-width:100%;
+height:auto;
+display:block;
+}
+
+/* NAVBAR */
+
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 8%;
+background:white;
+box-shadow:0 3px 12px rgba(0,0,0,0.08);
+}
+
+.logo{
+display:flex;
+align-items:center;
+gap:12px;
+font-size:24px;
+font-weight:bold;
+color:#2f7dd3;
+}
+
+.logo img{
+height:60px;
+}
+
+nav ul{
+display:flex;
+gap:40px;
+list-style:none;
+}
+
+nav a{
+text-decoration:none;
+font-size:18px;
+color:#333;
+transition:0.3s;
+}
+
+nav a:hover{
+color:#2f7dd3;
+}
+
+/* HERO */
+
+.hero{
+height:80vh;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+text-align:center;
+background:linear-gradient(135deg,#2f7dd3,#5cab20);
+color:white;
+padding:20px;
+}
+
+.hero h1{
+font-size:48px;
+margin-bottom:15px;
+}
+
+.hero p{
+font-size:20px;
+max-width:700px;
+line-height:1.6;
+}
+
+/* SECTION GENERAL */
+
+section{
+padding:80px 10%;
+}
+
+/* TITULOS */
+
+h2{
+text-align:center;
+font-size:36px;
+margin-bottom:40px;
+color:#2f7dd3;
+}
+
+/* DESCRIPCION */
+
+.descripcion{
+max-width:900px;
+margin:auto;
+font-size:18px;
+line-height:1.8;
+text-align:center;
+}
+
+/* GRID */
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:30px;
+margin-top:40px;
+}
+
+/* CARD */
+
+.card{
+background:white;
+padding:30px;
+border-radius:14px;
+box-shadow:0 10px 25px rgba(0,0,0,0.08);
+transition:0.3s;
+text-align:center;
+}
+
+.card:hover{
+transform:translateY(-8px);
+box-shadow:0 15px 30px rgba(0,0,0,0.15);
+}
+
+.card img{
+width:90px;
+margin:0 auto 15px;
+}
+
+.card h3{
+margin-bottom:10px;
+color:#2f7dd3;
+font-size:22px;
+}
+
+.card p{
+font-size:16px;
+line-height:1.6;
+}
+
+/* IMAGEN + TEXTO */
+
+.flex{
+display:flex;
+align-items:center;
+justify-content:center;
+gap:40px;
+flex-wrap:wrap;
+text-align:center;
+}
+
+.flex img{
+width:320px;
+border-radius:12px;
+box-shadow:0 10px 25px rgba(0,0,0,0.15);
+}
+
+.flex p{
+font-size:18px;
+line-height:1.8;
+max-width:700px;
+}
+
+/* BENEFICIOS */
+
+.beneficios{
+background:#eaf4ff;
+}
+
+/* FOOTER */
+
+footer{
+background:#0c3d75;
+color:white;
+text-align:center;
+padding:25px;
+margin-top:40px;
+}
+
+/* ========================= */
+/* RESPONSIVE */
+/* ========================= */
+
+@media (max-width: 992px){
+
+nav{
+flex-direction:column;
+gap:20px;
+padding:20px;
+}
+
+nav ul{
+flex-wrap:wrap;
+justify-content:center;
+gap:20px;
+}
+
+.logo{
+font-size:20px;
+text-align:center;
+}
+
+.logo img{
+height:55px;
+}
+
+.hero{
+height:auto;
+padding:80px 20px;
+}
+
+.hero h1{
+font-size:40px;
+}
+
+.hero p{
+font-size:18px;
+}
+
+h2{
+font-size:32px;
+}
+
+.descripcion,
+.flex p{
+font-size:17px;
+}
+
+}
+
+/* TABLETS Y CELULARES */
+
+@media (max-width: 768px){
+
+nav{
+padding:15px;
+}
+
+nav ul{
+flex-direction:column;
+align-items:center;
+gap:15px;
+}
+
+nav a{
+font-size:16px;
+}
+
+.logo{
+flex-direction:column;
+font-size:18px;
+}
+
+.logo img{
+height:50px;
+}
+
+.hero{
+padding:70px 20px;
+}
+
+.hero h1{
+font-size:30px;
+}
+
+.hero p{
+font-size:16px;
+}
+
+section{
+padding:60px 6%;
+}
+
+h2{
+font-size:28px;
+margin-bottom:30px;
+}
+
+.descripcion{
+font-size:16px;
+line-height:1.7;
+}
+
+.flex{
+flex-direction:column;
+gap:30px;
+}
+
+.flex img{
+width:100%;
+max-width:300px;
+}
+
+.flex p{
+font-size:16px;
+}
+
+.card{
+padding:25px;
+}
+
+.card h3{
+font-size:20px;
+}
+
+.card p{
+font-size:15px;
+}
+
+footer{
+font-size:14px;
+padding:18px;
+}
+
+}
+
+/* CELULARES PEQUEÑOS */
+
+@media (max-width: 480px){
+
+.hero h1{
+font-size:24px;
+}
+
+.hero p{
+font-size:15px;
+}
+
+h2{
+font-size:24px;
+}
+
+.descripcion,
+.flex p{
+font-size:15px;
+}
+
+.card h3{
+font-size:18px;
+}
+
+.card p{
+font-size:14px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- NAV -->
+
+<nav>
+
+<div class="logo">
+<img src="logoempresa.PNG" alt="Logo">
+HydroSmart Systems
+</div>
+
+<ul>
+<li><a href="practica1.html">Inicio</a></li>
+<li><a href="productos.html">Productos</a></li>
+<li><a href="ubicacion.html">Ubicación</a></li>
+<li><a href="login.html">Login</a></li>
+<li><a href="encuesta.html">Encuesta</a></li>
+</ul>
+
+</nav>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<h1>SmartHeater</h1>
+
+<p>
+El calentador inteligente que revoluciona la forma en que utilizas el agua caliente en tu hogar.
+Eficiencia, tecnología y sustentabilidad en un solo producto.
+</p>
+
+</section>
+
+<!-- DESCRIPCIÓN -->
+
+<section>
+
+<h2>¿Qué es SmartHeater?</h2>
+
+<p class="descripcion">
+
+SmartHeater es nuestro producto estrella: un boiler inteligente diseñado para calentar agua
+de manera eficiente, segura y automatizada. A diferencia de los sistemas tradicionales,
+este dispositivo solo funciona cuando realmente se necesita, reduciendo el consumo de energía
+y evitando el desperdicio de recursos.
+
+<br><br>
+
+Integra tecnología IoT que permite su control remoto mediante una aplicación móvil,
+además de monitorear en tiempo real variables como temperatura, consumo eléctrico y estado del sistema.
+
+</p>
+
+</section>
+
+<!-- FUNCIONAMIENTO -->
+
+<section>
+
+<h2>¿Cómo funciona?</h2>
+
+<div class="flex">
+
+<img src="Producto1.jpeg" alt="SmartHeater">
+
+<p>
+
+El sistema utiliza un microcontrolador ESP32 conectado a sensores de temperatura y nivel.
+Cuando el usuario activa el calentador desde su celular, el sistema enciende automáticamente
+la resistencia eléctrica y comienza el proceso de calentamiento.
+
+<br><br>
+
+Una vez que el agua alcanza la temperatura deseada (entre 65 y 70 °C), el sistema se apaga
+de forma automática para evitar sobrecalentamiento y ahorrar energía.
+
+<br><br>
+
+Toda la información se sincroniza en la nube, permitiendo monitoreo y control desde cualquier lugar.
+
+</p>
+
+</div>
+
+</section>
+
+<!-- CARACTERISTICAS -->
+
+<section>
+
+<h2>Características Principales</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>Control Inteligente</h3>
+<p>Encendido y apagado remoto desde una aplicación móvil en tiempo real.</p>
+</div>
+
+<div class="card">
+<h3>Ahorro de Energía</h3>
+<p>Reduce hasta un 30% el consumo energético al funcionar solo cuando es necesario.</p>
+</div>
+
+<div class="card">
+<h3>Monitoreo en Tiempo Real</h3>
+<p>Visualiza temperatura, estado del sistema y consumo eléctrico desde tu celular.</p>
+</div>
+
+<div class="card">
+<h3>Seguridad Automatizada</h3>
+<p>Sistema de apagado automático ante fallas o sobrecalentamiento.</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- TECNOLOGIA -->
+
+<section>
+
+<h2>Tecnología Integrada</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>ESP32</h3>
+<p>Microcontrolador con conexión WiFi para comunicación con la nube.</p>
+</div>
+
+<div class="card">
+<h3>Sensores</h3>
+<p>Detectan temperatura y nivel del agua para un control preciso.</p>
+</div>
+
+<div class="card">
+<h3>Relés</h3>
+<p>Permiten activar o desactivar la resistencia eléctrica automáticamente.</p>
+</div>
+
+<div class="card">
+<h3>Firebase</h3>
+<p>Base de datos en la nube para sincronización con la app móvil.</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- BENEFICIOS -->
+
+<section class="beneficios">
+
+<h2>Beneficios del Producto</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>Ecológico</h3>
+<p>Reduce emisiones contaminantes al eliminar el uso de gas.</p>
+</div>
+
+<div class="card">
+<h3>Modular</h3>
+<p>Permite reemplazar piezas sin desechar todo el equipo.</p>
+</div>
+
+<div class="card">
+<h3>Práctico</h3>
+<p>Agua caliente disponible justo cuando la necesitas.</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+© 2026 HydroSmart Systems | Producto Estelar SmartHeater
+</footer>
+
+</body>
+</html>

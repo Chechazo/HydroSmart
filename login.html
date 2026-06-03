@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Login - HydroSmart</title>
+
+<style>
+
+/* RESET */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+background:#f4f7fb;
+color:#333;
+}
+
+img{
+max-width:100%;
+height:auto;
+display:block;
+}
+
+/* NAVBAR */
+
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 8%;
+background:white;
+box-shadow:0 3px 12px rgba(0,0,0,0.08);
+}
+
+.logo{
+display:flex;
+align-items:center;
+gap:12px;
+font-size:24px;
+font-weight:bold;
+color:#2f7dd3;
+}
+
+.logo img{
+height:60px;
+}
+
+nav ul{
+display:flex;
+gap:40px;
+list-style:none;
+}
+
+nav a{
+text-decoration:none;
+font-size:18px;
+color:#333;
+transition:0.3s;
+}
+
+nav a:hover{
+color:#2f7dd3;
+}
+
+/* LOGIN */
+
+.container{
+min-height:80vh;
+display:flex;
+justify-content:center;
+align-items:center;
+padding:40px 20px;
+}
+
+.login-box{
+background:white;
+padding:40px;
+border-radius:15px;
+box-shadow:0 15px 35px rgba(0,0,0,0.15);
+width:100%;
+max-width:380px;
+text-align:center;
+animation:fadeIn 0.8s ease;
+}
+
+@keyframes fadeIn{
+
+from{
+opacity:0;
+transform:translateY(20px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+
+}
+
+.login-box h2{
+margin-bottom:25px;
+color:#2f7dd3;
+font-size:32px;
+}
+
+/* INPUTS */
+
+input{
+width:100%;
+padding:12px;
+margin:10px 0;
+border-radius:8px;
+border:1px solid #ccc;
+outline:none;
+transition:0.3s;
+font-size:16px;
+}
+
+input:focus{
+border-color:#2f7dd3;
+box-shadow:0 0 5px rgba(47,125,211,0.5);
+}
+
+/* BOTÓN */
+
+button{
+width:100%;
+padding:12px;
+margin-top:15px;
+background:#2f7dd3;
+color:white;
+border:none;
+border-radius:8px;
+cursor:pointer;
+font-size:16px;
+transition:0.3s;
+}
+
+button:hover{
+background:#1c5fb3;
+transform:scale(1.03);
+}
+
+/* MENSAJE */
+
+#mensaje{
+margin-top:12px;
+font-size:14px;
+color:red;
+font-weight:bold;
+}
+
+/* FOOTER */
+
+footer{
+background:#0c3d75;
+color:white;
+text-align:center;
+padding:25px;
+margin-top:40px;
+}
+
+/* ========================= */
+/* RESPONSIVE */
+/* ========================= */
+
+@media (max-width: 992px){
+
+nav{
+flex-direction:column;
+gap:20px;
+padding:20px;
+}
+
+nav ul{
+flex-wrap:wrap;
+justify-content:center;
+gap:20px;
+}
+
+.logo{
+font-size:20px;
+text-align:center;
+}
+
+.logo img{
+height:55px;
+}
+
+}
+
+/* TABLETS Y CELULARES */
+
+@media (max-width: 768px){
+
+nav{
+padding:15px;
+}
+
+nav ul{
+flex-direction:column;
+align-items:center;
+gap:15px;
+}
+
+nav a{
+font-size:16px;
+}
+
+.logo{
+flex-direction:column;
+font-size:18px;
+}
+
+.logo img{
+height:50px;
+}
+
+.container{
+padding:50px 15px;
+}
+
+.login-box{
+padding:30px 25px;
+}
+
+.login-box h2{
+font-size:28px;
+}
+
+input{
+font-size:15px;
+padding:11px;
+}
+
+button{
+font-size:15px;
+padding:11px;
+}
+
+footer{
+font-size:14px;
+padding:18px;
+}
+
+}
+
+/* CELULARES PEQUEÑOS */
+
+@media (max-width: 480px){
+
+.login-box{
+padding:25px 20px;
+border-radius:12px;
+}
+
+.login-box h2{
+font-size:24px;
+}
+
+input{
+font-size:14px;
+padding:10px;
+}
+
+button{
+font-size:14px;
+padding:10px;
+}
+
+#mensaje{
+font-size:13px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- NAV -->
+
+<nav>
+
+<div class="logo">
+<img src="logoempresa.PNG" alt="Logo">
+HydroSmart Systems
+</div>
+
+<ul>
+<li><a href="practica1.html">Inicio</a></li>
+<li><a href="productos.html">Productos</a></li>
+<li><a href="ubicacion.html">Ubicación</a></li>
+<li><a href="login.html">Login</a></li>
+<li><a href="encuesta.html">Encuesta</a></li>
+</ul>
+
+</nav>
+
+<!-- LOGIN -->
+
+<div class="container">
+
+<div class="login-box">
+
+<h2>Iniciar Sesión</h2>
+
+<input type="text" placeholder="Usuario" id="user">
+
+<input type="password" placeholder="Contraseña" id="pass">
+
+<button onclick="login()">Entrar</button>
+
+<p id="mensaje"></p>
+
+</div>
+
+</div>
+
+<!-- FOOTER -->
+
+<footer>
+© 2026 HydroSmart Systems
+</footer>
+
+<script>
+
+function login(){
+
+let user = document.getElementById("user").value;
+let pass = document.getElementById("pass").value;
+
+/* VALIDACIÓN */
+
+if(user === "admin" && pass === "1234"){
+
+window.location.href = "practica1.html";
+
+}else{
+
+document.getElementById("mensaje").innerText =
+"Usuario o contraseña incorrectos";
+
+}
+
+}
+
+</script>
+
+</body>
+
+</html>

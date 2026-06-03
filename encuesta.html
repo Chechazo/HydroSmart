@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Encuesta - HydroSmart</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+background:#f4f7fb;
+color:#333;
+}
+
+img{
+max-width:100%;
+height:auto;
+display:block;
+}
+
+/* NAVBAR */
+
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 8%;
+background:white;
+box-shadow:0 3px 12px rgba(0,0,0,0.08);
+}
+
+.logo{
+display:flex;
+align-items:center;
+gap:12px;
+font-size:24px;
+font-weight:bold;
+color:#2f7dd3;
+}
+
+.logo img{
+height:70px;
+}
+
+nav ul{
+display:flex;
+gap:45px;
+list-style:none;
+}
+
+nav a{
+text-decoration:none;
+font-size:18px;
+color:#333;
+transition:0.3s;
+}
+
+nav a:hover{
+color:#2f7dd3;
+}
+
+/* HERO */
+
+.hero{
+padding:70px 10%;
+text-align:center;
+background:linear-gradient(135deg,#2f7dd3,#5cab20);
+color:white;
+}
+
+.hero h1{
+font-size:40px;
+margin-bottom:10px;
+}
+
+.hero p{
+font-size:18px;
+}
+
+/* FORM */
+
+.form-section{
+padding:80px 10%;
+display:flex;
+justify-content:center;
+}
+
+form{
+background:white;
+padding:40px;
+border-radius:15px;
+width:100%;
+max-width:700px;
+box-shadow:0 15px 35px rgba(0,0,0,0.15);
+animation:fadeIn 0.7s ease;
+}
+
+@keyframes fadeIn{
+from{
+opacity:0;
+transform:translateY(20px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+form h2{
+text-align:center;
+margin-bottom:30px;
+color:#2f7dd3;
+font-size:32px;
+}
+
+label{
+display:block;
+margin-top:20px;
+font-weight:bold;
+font-size:16px;
+}
+
+/* INPUTS */
+
+input,
+select,
+textarea{
+width:100%;
+padding:12px;
+margin-top:8px;
+border-radius:8px;
+border:1px solid #ccc;
+outline:none;
+transition:0.3s;
+font-size:16px;
+}
+
+input:focus,
+select:focus,
+textarea:focus{
+border-color:#2f7dd3;
+box-shadow:0 0 5px rgba(47,125,211,0.5);
+}
+
+/* RADIO */
+
+.radio-group{
+margin-top:12px;
+display:flex;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.radio-group label{
+font-weight:normal;
+display:flex;
+align-items:center;
+gap:6px;
+margin-top:0;
+}
+
+/* BOTON */
+
+button{
+margin-top:30px;
+width:100%;
+padding:14px;
+background:#2f7dd3;
+color:white;
+border:none;
+border-radius:10px;
+font-size:16px;
+cursor:pointer;
+transition:0.3s;
+}
+
+button:hover{
+background:#1c5fb3;
+transform:scale(1.03);
+}
+
+/* MENSAJE */
+
+#mensaje{
+margin-top:15px;
+text-align:center;
+color:green;
+font-weight:bold;
+font-size:16px;
+}
+
+/* FOOTER */
+
+footer{
+background:#0c3d75;
+color:white;
+text-align:center;
+padding:25px;
+margin-top:40px;
+}
+
+/* ========================= */
+/* RESPONSIVE */
+/* ========================= */
+
+@media (max-width: 992px){
+
+nav{
+flex-direction:column;
+gap:20px;
+padding:20px;
+}
+
+nav ul{
+flex-wrap:wrap;
+justify-content:center;
+gap:20px;
+}
+
+.logo{
+font-size:20px;
+text-align:center;
+}
+
+.logo img{
+height:55px;
+}
+
+.hero h1{
+font-size:34px;
+}
+
+.hero p{
+font-size:17px;
+}
+
+form h2{
+font-size:28px;
+}
+
+}
+
+/* TABLETS Y CELULARES */
+
+@media (max-width: 768px){
+
+nav{
+padding:15px;
+}
+
+nav ul{
+flex-direction:column;
+align-items:center;
+gap:15px;
+}
+
+nav a{
+font-size:16px;
+}
+
+.logo{
+flex-direction:column;
+font-size:18px;
+}
+
+.logo img{
+height:50px;
+}
+
+.hero{
+padding:60px 20px;
+}
+
+.hero h1{
+font-size:28px;
+}
+
+.hero p{
+font-size:16px;
+}
+
+.form-section{
+padding:60px 6%;
+}
+
+form{
+padding:25px;
+}
+
+form h2{
+font-size:24px;
+margin-bottom:20px;
+}
+
+label{
+font-size:15px;
+}
+
+input,
+select,
+textarea{
+font-size:15px;
+padding:10px;
+}
+
+.radio-group{
+flex-direction:column;
+gap:10px;
+align-items:flex-start;
+}
+
+button{
+padding:12px;
+font-size:15px;
+}
+
+#mensaje{
+font-size:15px;
+}
+
+footer{
+font-size:14px;
+padding:18px;
+}
+
+}
+
+/* CELULARES PEQUEÑOS */
+
+@media (max-width: 480px){
+
+.hero h1{
+font-size:24px;
+}
+
+.hero p{
+font-size:15px;
+}
+
+form{
+padding:20px;
+border-radius:12px;
+}
+
+form h2{
+font-size:22px;
+}
+
+label{
+font-size:14px;
+}
+
+input,
+select,
+textarea{
+font-size:14px;
+}
+
+button{
+font-size:14px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav>
+
+<div class="logo">
+<img src="logoempresa.PNG" alt="Logo">
+HydroSmart Systems
+</div>
+
+<ul>
+<li><a href="practica1.html">Inicio</a></li>
+<li><a href="productos.html">Productos</a></li>
+<li><a href="ubicacion.html">Ubicación</a></li>
+<li><a href="login.html">Login</a></li>
+<li><a href="encuesta.html">Encuesta</a></li>
+</ul>
+
+</nav>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<h1>Encuesta de Satisfacción</h1>
+
+<p>Tu opinión nos ayuda a mejorar nuestros productos</p>
+
+</section>
+
+<!-- FORMULARIO -->
+
+<section class="form-section">
+
+<form onsubmit="enviar(event)">
+
+<h2>Queremos conocer tu experiencia</h2>
+
+<label>Nombre (opcional)</label>
+<input type="text" placeholder="Escribe tu nombre">
+
+<label>¿Cómo calificarías nuestro producto?</label>
+<select>
+<option>Excelente</option>
+<option>Bueno</option>
+<option>Regular</option>
+<option>Malo</option>
+</select>
+
+<label>¿Qué tan fácil fue utilizar el producto?</label>
+<select>
+<option>Muy fácil</option>
+<option>Fácil</option>
+<option>Difícil</option>
+<option>Muy difícil</option>
+</select>
+
+<label>¿Recomendarías HydroSmart?</label>
+
+<div class="radio-group">
+<label><input type="radio" name="r"> Sí</label>
+<label><input type="radio" name="r"> No</label>
+</div>
+
+<label>¿Qué aspecto te gustó más?</label>
+<input type="text" placeholder="Ej: diseño, eficiencia, precio...">
+
+<label>¿Qué mejorarías?</label>
+<textarea rows="4" placeholder="Tu opinión aquí..."></textarea>
+
+<label>¿Volverías a comprar con nosotros?</label>
+
+<select>
+<option>Sí</option>
+<option>No</option>
+<option>Tal vez</option>
+</select>
+
+<button type="submit">Enviar encuesta</button>
+
+<p id="mensaje"></p>
+
+</form>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+© 2026 HydroSmart Systems
+</footer>
+
+<script>
+
+function enviar(e){
+
+e.preventDefault();
+
+document.getElementById("mensaje").innerText =
+"Gracias por tu opinión 🙌";
+
+}
+
+</script>
+
+</body>
+</html>
